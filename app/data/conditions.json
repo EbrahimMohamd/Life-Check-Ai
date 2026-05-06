@@ -1,0 +1,252 @@
+[
+    {
+        "name_en": "Type 2 Diabetes",
+        "name_ar": "السكري من النوع الثاني",
+        "weights": {
+            "thirst": 0.3,
+            "polyuria": 0.3,
+            "fatigue": 0.2,
+            "weight_loss": 0.2
+        },
+        "risk_rules": [
+            {
+                "feature": "BMI",
+                "op": ">",
+                "value": 30,
+                "bonus": 0.1
+            }
+        ],
+        "advice_en": [
+            "Do blood sugar test",
+            "Reduce sugar intake"
+        ],
+        "advice_ar": [
+            "قم بعمل تحليل سكر",
+            "قلل من تناول السكريات"
+        ]
+    },
+    {
+        "name_en": "Hypertension",
+        "name_ar": "ارتفاع ضغط الدم",
+        "weights": {
+            "headache": 0.4,
+            "dizziness": 0.3,
+            "chest_pain": 0.3
+        },
+        "advice_en": [
+            "Measure blood pressure regularly"
+        ],
+        "advice_ar": [
+            "قم بقياس ضغط الدم بانتظام"
+        ]
+    },
+    {
+        "name_en": "Pneumonia",
+        "name_ar": "التهاب رئوي",
+        "weights": {
+            "fever": 0.3,
+            "cough": 0.3,
+            "shortness_of_breath": 0.4
+        },
+        "advice_en": [
+            "Do chest X-ray",
+            "Consult a doctor"
+        ],
+        "advice_ar": [
+            "قم بعمل أشعة على الصدر",
+            "استشر طبيب"
+        ]
+    },
+    {
+        "name_en": "Asthma",
+        "name_ar": "الربو",
+        "weights": {
+            "wheezing": 0.4,
+            "shortness_of_breath": 0.4,
+            "cough": 0.2
+        },
+        "advice_en": [
+            "Use inhalers",
+            "Avoid triggers"
+        ],
+        "advice_ar": [
+            "استخدم البخاخات",
+            "تجنب المحفزات"
+        ]
+    },
+    {
+        "name_en": "COPD",
+        "name_ar": "الانسداد الرئوي المزمن",
+        "weights": {
+            "chronic_cough": 0.4,
+            "shortness_of_breath": 0.4,
+            "wheezing": 0.2
+        },
+        "advice_en": [
+            "Stop smoking immediately"
+        ],
+        "advice_ar": [
+            "توقف عن التدخين فورًا"
+        ]
+    },
+    {
+        "name_en": "Lung Cancer (General)",
+        "name_ar": "سرطان الرئة",
+        "weights": {
+            "chronic_cough": 0.2,
+            "hemoptysis": 0.3,
+            "weight_loss": 0.2,
+            "fatigue": 0.1,
+            "shortness_of_breath": 0.2
+        },
+        "risk_rules": [
+            {
+                "feature": "age",
+                "op": ">",
+                "value": 50,
+                "bonus": 0.1
+            }
+        ],
+        "advice_en": [
+            "Do CT scan",
+            "Consult oncologist urgently"
+        ],
+        "advice_ar": [
+            "قم بعمل أشعة مقطعية",
+            "استشر طبيب أورام فورًا"
+        ]
+    },
+    {
+        "name_en": "Non-Small Cell Lung Cancer",
+        "name_ar": "سرطان الرئة غير صغير الخلايا",
+        "weights": {
+            "chronic_cough": 0.25,
+            "hemoptysis": 0.25,
+            "chest_pain": 0.2,
+            "weight_loss": 0.2,
+            "fatigue": 0.1
+        },
+        "advice_en": [
+            "CT scan",
+            "Oncology referral"
+        ],
+        "advice_ar": [
+            "أشعة مقطعية",
+            "تحويل لطبيب أورام"
+        ]
+    },
+    {
+        "name_en": "Small Cell Lung Cancer",
+        "name_ar": "سرطان الرئة صغير الخلايا",
+        "weights": {
+            "hemoptysis": 0.3,
+            "weight_loss": 0.3,
+            "fatigue": 0.2,
+            "shortness_of_breath": 0.2
+        },
+        "advice_en": [
+            "Urgent oncology consult"
+        ],
+        "advice_ar": [
+            "استشارة أورام بشكل عاجل"
+        ]
+    },
+    {
+        "name_en": "Tuberculosis",
+        "name_ar": "الدرن",
+        "weights": {
+            "chronic_cough": 0.3,
+            "night_sweats": 0.3,
+            "weight_loss": 0.2,
+            "hemoptysis": 0.2
+        },
+        "advice_en": [
+            "Do TB test",
+            "Chest imaging"
+        ],
+        "advice_ar": [
+            "قم بعمل تحليل درن",
+            "أشعة على الصدر"
+        ]
+    },
+    {
+        "name_en": "Bronchitis",
+        "name_ar": "التهاب الشعب الهوائية",
+        "weights": {
+            "cough": 0.4,
+            "fever": 0.3,
+            "fatigue": 0.3
+        },
+        "advice_en": [
+            "Rest",
+            "Drink fluids"
+        ],
+        "advice_ar": [
+            "راحة",
+            "الإكثار من السوائل"
+        ]
+    },
+    {
+        "name_en": "Liver Cancer",
+        "name_ar": "سرطان الكبد",
+        "weights": {
+            "jaundice": 0.4,
+            "weight_loss": 0.3,
+            "fatigue": 0.3
+        },
+        "advice_en": [
+            "Liver tests",
+            "Imaging"
+        ],
+        "advice_ar": [
+            "تحاليل كبد",
+            "تصوير"
+        ]
+    },
+    {
+        "name_en": "Breast Cancer",
+        "name_ar": "سرطان الثدي",
+        "weights": {
+            "lump": 0.6,
+            "weight_loss": 0.2,
+            "fatigue": 0.2
+        },
+        "advice_en": [
+            "Mammogram"
+        ],
+        "advice_ar": [
+            "عمل ماموجرام"
+        ]
+    },
+    {
+        "name_en": "Colon Cancer",
+        "name_ar": "سرطان القولون",
+        "weights": {
+            "weight_loss": 0.3,
+            "fatigue": 0.3,
+            "diarrhea": 0.2,
+            "abdominal_pain": 0.2
+        },
+        "advice_en": [
+            "Colonoscopy"
+        ],
+        "advice_ar": [
+            "منظار قولون"
+        ]
+    },
+    {
+        "name_en": "Leukemia",
+        "name_ar": "سرطان الدم",
+        "weights": {
+            "fatigue": 0.4,
+            "fever": 0.3,
+            "night_sweats": 0.3
+        },
+        "advice_en": [
+            "Complete blood count (CBC)"
+        ],
+        "advice_ar": [
+            "تحليل صورة دم كاملة"
+        ]
+    }
+]

@@ -1,0 +1,100 @@
+{
+    "thirst": [
+        "عطش",
+        "عطشان",
+        "thirst"
+    ],
+    "polyuria": [
+        "تبول كتير",
+        "frequent urination"
+    ],
+    "fatigue": [
+        "تعب",
+        "ارهاق",
+        "fatigue"
+    ],
+    "chest_pain": [
+        "ألم في الصدر",
+        "وجع صدر",
+        "chest pain"
+    ],
+    "shortness_of_breath": [
+        "ضيق تنفس",
+        "نهجان",
+        "shortness of breath"
+    ],
+    "fever": [
+        "سخونية",
+        "حمى",
+        "fever"
+    ],
+    "cough": [
+        "كحة",
+        "سعال",
+        "cough"
+    ],
+    "chronic_cough": [
+        "كحة مزمنة",
+        "chronic cough"
+    ],
+    "hemoptysis": [
+        "كحة بدم",
+        "دم مع الكحة",
+        "coughing blood"
+    ],
+    "wheezing": [
+        "صفير في الصدر",
+        "wheezing"
+    ],
+    "headache": [
+        "صداع",
+        "headache"
+    ],
+    "nausea": [
+        "غثيان",
+        "nausea"
+    ],
+    "vomiting": [
+        "قيء",
+        "ترجيع",
+        "vomiting"
+    ],
+    "diarrhea": [
+        "اسهال",
+        "diarrhea"
+    ],
+    "jaundice": [
+        "اصفرار",
+        "يرقان",
+        "jaundice"
+    ],
+    "weight_loss": [
+        "نقصان وزن",
+        "weight loss"
+    ],
+    "loss_of_appetite": [
+        "فقدان شهية",
+        "loss of appetite"
+    ],
+    "lump": [
+        "كتلة",
+        "ورم",
+        "lump"
+    ],
+    "bone_pain": [
+        "ألم العظام",
+        "bone pain"
+    ],
+    "night_sweats": [
+        "عرق ليلي",
+        "night sweats"
+    ],
+    "hoarseness": [
+        "بحة صوت",
+        "hoarseness"
+    ],
+    "dizziness": [
+        "دوخة",
+        "dizziness"
+    ]
+}
