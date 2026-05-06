@@ -11,7 +11,7 @@ env/
 .idea/
 *.log
 .DS_Store
-# استبعاد ملفات البيانات الكبيرة لو مش محتاجها
-# data/
-# models/*.h5
-# models/*.pkl
+# سماح برفع الصور والموديلات
+!app/data/**
+!app/models/**
+!app/local_models/**
