@@ -9,7 +9,7 @@ numpy>=2.4
 pandas>=3.0
 scikit-learn>=1.8
 pyarrow>=24.0
-tensorflow
+tensorflow-cpu==2.15.0
 joblib
 streamlit
 fpdf2
