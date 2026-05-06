@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+env/
+.env
+.vscode/
+.idea/
+*.log
+.DS_Store
+# استبعاد ملفات البيانات الكبيرة لو مش محتاجها
+# data/
+# models/*.h5
+# models/*.pkl
