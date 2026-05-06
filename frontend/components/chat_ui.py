@@ -1,5 +1,5 @@
 import streamlit as st
-from frontend.services.api_client import send_chat_message
+from services.api_client import send_chat_message
 
 def render_chat_interface():
     # Inject Custom Chat CSS for a beautiful, scrollable, native layout

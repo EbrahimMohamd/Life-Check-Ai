@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-from frontend.services.api_client import predict_lung
+from services.api_client import predict_lung
 
 def render_lung_uploader():
     st.title("🫁 Lung Cancer Clinical Diagnostics")
@@ -74,7 +74,7 @@ def render_lung_uploader():
                     </div>
                     """, unsafe_allow_html=True)
                     
-                    from frontend.services.pdf_generator import get_clinical_suggestion
+                    from services.pdf_generator import get_clinical_suggestion
                     suggestion = get_clinical_suggestion("lung", res)
                     
                     if prediction == "Malignant":

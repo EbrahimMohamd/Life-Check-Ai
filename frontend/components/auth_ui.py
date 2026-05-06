@@ -1,5 +1,5 @@
 import streamlit as st
-from frontend.services.api_client import login, register
+from services.api_client import login, register
 
 def render_auth_ui():
     import os

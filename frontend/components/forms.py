@@ -1,6 +1,6 @@
 import streamlit as st
-from frontend.services.api_client import predict_diabetes, predict_heart
-from frontend.services.pdf_generator import get_clinical_suggestion
+from services.api_client import predict_diabetes, predict_heart
+from services.pdf_generator import get_clinical_suggestion
 
 def display_result_card(result, model_type=""):
     if "error" in result:

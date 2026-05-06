@@ -1,5 +1,5 @@
 import streamlit as st
-from frontend.services.api_client import change_password, clear_history, delete_account
+from services.api_client import change_password, clear_history, delete_account
 
 def render_settings():
     st.markdown("<h1 style='text-align:center;'>⚙️ Account Settings</h1>", unsafe_allow_html=True)

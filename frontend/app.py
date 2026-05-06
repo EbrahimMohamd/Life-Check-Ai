@@ -1,12 +1,12 @@
 import streamlit as st
 import os
 import base64
-from frontend.components.auth_ui import render_auth_ui
-from frontend.components.chat_ui import render_chat_interface
-from frontend.components.forms import render_diabetes_form, render_heart_form
-from frontend.components.uploader import render_lung_uploader
-from frontend.components.settings import render_settings
-from frontend.services.pdf_generator import generate_patient_pdf
+from components.auth_ui import render_auth_ui
+from components.chat_ui import render_chat_interface
+from components.forms import render_diabetes_form, render_heart_form
+from components.uploader import render_lung_uploader
+from components.settings import render_settings
+from services.pdf_generator import generate_patient_pdf
 
 # Must be the very first Streamlit command
 import os
@@ -461,7 +461,6 @@ def render_header():
     
     with col_logo:
         import os
-        from frontend.app import get_base64_of_bin_file
         logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
         if os.path.exists(logo_path):
             l_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
@@ -499,7 +498,6 @@ def render_header():
 
 def render_dashboard():
     import os
-    from frontend.app import get_base64_of_bin_file
     logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
     
     if os.path.exists(logo_path):
