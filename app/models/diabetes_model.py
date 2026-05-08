@@ -22,7 +22,7 @@ def load_objects():
             print("Failed to load diabetes XGBoost model:", e)
     return model_cache, features_cache
 
-# ── AgeCategory mapping (matches BRFSS) ──
+
 AGE_MAP = {
     '18-24': 1, '25-29': 2, '30-34': 3, '35-39': 4,
     '40-44': 5, '45-49': 6, '50-54': 7, '55-59': 8,
@@ -30,16 +30,9 @@ AGE_MAP = {
     '80 or older': 13
 }
 
-# ── GenHealth mapping (matches BRFSS: 1=Excellent to 5=Poor, wait, the notebook mapped them differently?)
-# Let's check notebook: 
-# data2.GenHlth[data2['GenHlth'] == 5] = 'Excellent'
-# data2.GenHlth[data2['GenHlth'] == 4] = 'Very Good'
-# data2.GenHlth[data2['GenHlth'] == 3] = 'Good'
-# data2.GenHlth[data2['GenHlth'] == 2] = 'Fair'
-# data2.GenHlth[data2['GenHlth'] == 1] = 'Poor'
-# So: Excellent=5, Very Good=4, Good=3, Fair=2, Poor=1.
+
 GENHEALTH_MAP = {
-    'Poor': 1, 'Fair': 2, 'Good': 3, 'Very Good': 4, 'Excellent': 5
+    'Poor': 5, 'Fair': 4, 'Good': 3, 'Very Good': 2, 'Excellent': 1
 }
 
 def predict_diabetes_risk(req: DiabetesReq):
@@ -69,7 +62,7 @@ def predict_diabetes_risk(req: DiabetesReq):
     }
 
     df = pd.DataFrame(input_data)
-    df = df[features] # Ensure exact order
+    df = df[features] 
 
     prob = model.predict_proba(df)[0][1]
     risk_level = "High" if prob > 0.5 else "Low"
