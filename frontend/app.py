@@ -8,12 +8,11 @@ from components.uploader import render_lung_uploader
 from components.settings import render_settings
 from services.pdf_generator import generate_patient_pdf
 
-# Must be the very first Streamlit command
+
 import os
 logo_path_icon = os.path.join(os.path.dirname(__file__), "static", "logo.png")
 st.set_page_config(page_title="LifeCheck AI", page_icon=logo_path_icon if os.path.exists(logo_path_icon) else "🧬", layout="wide", initial_sidebar_state="collapsed")
 
-# Read and encode our AI Robot Avatar Image
 def get_base64_of_bin_file(bin_file):
     if os.path.exists(bin_file):
         with open(bin_file, 'rb') as f:
@@ -27,9 +26,8 @@ bot_bg = f"data:image/png;base64,{get_base64_of_bin_file(bot_icon_path)}"
 logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
 logo_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
 
-# ══════════════════════════════════════════════════════
-# LIFECHECK AI — Unified Light Clinical Design System
-# ══════════════════════════════════════════════════════
+
+
 if "theme" not in st.session_state:
     st.session_state.theme = "dark"
 
@@ -413,7 +411,6 @@ st.markdown(f"""
 
 
 
-# Initialize Session State Defaults
 def set_page(page_name):
     st.query_params["page"] = page_name
     st.rerun()
@@ -541,7 +538,7 @@ def render_dashboard():
 
 
 
-# Streamlit Native Modal Dialog for Chatbot
+
 @st.dialog("💬 Medical AI Assistant")
 def chat_modal():
     render_chat_interface()
@@ -549,7 +546,7 @@ def chat_modal():
 def main():
     import streamlit.components.v1 as components
 
-    # ── Restore session after back-button reload ──
+    
     _ra = st.query_params.get("_ra", "")
     _rn = st.query_params.get("_rn", "")
     if _ra and "auth_token" not in st.session_state:
@@ -559,22 +556,18 @@ def main():
         del st.query_params["_rn"]
         st.rerun()
 
-    # --- PHASE 2: AUTHENTICATION ENFORCEMENT ---
+    
     if "auth_token" not in st.session_state:
         st.markdown("<style>#floating-robot-marker { display: none !important; }</style>", unsafe_allow_html=True)
         render_auth_ui()
         return
 
-    # --- RENDER GLOBAL HEADER FOR ALL PAGES ---
+    
     render_header()
 
-    # --- NORMAL APPLICATION ROUTING ---
     current_page = st.query_params.get("page", "Dashboard")
 
-    # ── Browser back/forward support ──
-    # We track the previous page in session_state.
-    # On each render we push the PREVIOUS page into browser history so Chrome's
-    # back arrow has something to go back to.
+   
     _prev = st.session_state.get("_nav_prev", None)
     _token = st.session_state.get("auth_token", "")
     _name  = st.session_state.get("full_name", "").replace("'", "\\'")
@@ -601,7 +594,7 @@ def main():
 }})();
 </script>""", height=0)
 
-    # Always save auth + current page
+  
     components.html(f"""<script>
 (function() {{
     if ('{_token}') {{
@@ -634,12 +627,10 @@ def main():
     elif current_page == "Settings":
         render_settings()
 
-    # The precision hook wrapper for our CSS styling. 
-    # Any element natively created right after this span will be hijacked by the CSS into floating mode!
+    
+    
     st.markdown("<span id='floating-robot-marker'></span>", unsafe_allow_html=True)
-    # Important: floating bot must be the unique "secondary" button in the DOM for our CSS logic. 
-    # But wait! I added two primary/secondary buttons in the header! (Export & Logout).
-    # THIS BREAKS THE EXCLUSIVE CSS RULE! We need to change the header buttons to "primary" or use another isolation technique!
+     
     if st.button("chat_hidden", key="floating_bot_hook", type="secondary"):
         chat_modal()
 
