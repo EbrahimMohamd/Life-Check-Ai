@@ -455,10 +455,9 @@ def render_header():
     .stButton > button[kind="tertiary"] p {
         font-size: 1.15rem !important;
     }
-    .stButton > button[kind="tertiary"] span[data-testid="stIconMaterial"],
-    .stButton > button[kind="tertiary"] span.material-symbols-rounded,
-    .stButton > button[kind="tertiary"] i {
+    .stButton > button[kind="tertiary"] p * {
         font-size: 1.8rem !important;
+        vertical-align: middle !important;
     }
     </style>
     """, unsafe_allow_html=True)
