@@ -39,7 +39,7 @@
 
 ### 🎯 What It Does
 
-- 🩸 **Diabetes Screening** — Predicts diabetes risk from 14 behavioral & clinical indicators using XGBoost
+- 🩸 **Diabetes Screening** — Predicts diabetes risk from 14 behavioral & clinical indicators (CDC BRFSS 2015) using XGBoost
 - ❤️ **Heart Disease Screening** — Analyzes 16 lifestyle & medical factors using Random Forest
 - 🫁 **Lung Cancer Detection** — Classifies chest X-ray images using EfficientNetB0 with **Grad-CAM visual explainability**
 - 🤖 **Medical Chatbot** — A safe, RAG-grounded AI assistant with emergency detection and a 7-stage NLP pipeline
@@ -206,10 +206,12 @@ Patient Message
 | Attribute | Details |
 |:---|:---|
 | **Algorithm** | XGBoost (Gradient Boosting) |
+| **Dataset** | CDC BRFSS 2015 — Behavioral Risk Factor Surveillance System (`diabetes_binary_health_indicators_BRFSS2015.csv`, ~22 MB, 253K+ records) |
 | **Input** | 14 clinical & behavioral features |
-| **Features** | HighBP, HighChol, BMI, Smoker, Stroke, HeartDisease, PhysActivity, HvyAlcohol, GenHlth, DiffWalk, PhysHlth, Sex, AgeCategory, MentHlth |
+| **Features** | HighBP, HighChol, BMI, Smoker, Stroke, HeartDiseaseorAttack, PhysActivity, HvyAlcoholConsump, GenHlth, DiffWalk, PhysHlth, Sex, Age, MentHlth |
 | **Output** | Risk probability (0–100%), risk level, personalized recommendation |
 | **Model File** | `diabetes_disease_xgb_model.joblib` (~21 KB) |
+| **Notebook** | `diabetes .ipynb` (training & analysis notebook in `app/models/`) |
 
 ### ❤️ Heart Disease Prediction — Random Forest Classifier
 
@@ -367,7 +369,7 @@ Life-Check-Ai/
 │   │   ├── database.py              # SQLAlchemy engine & session
 │   │   └── models.py                # User & MedicalRecord ORM models
 │   ├── 📂 data/                     # Datasets & knowledge bases
-│   │   ├── diabetes_prediction_dataset.csv
+│   │   ├── diabetes_binary_health_indicators_BRFSS2015.csv  # CDC BRFSS 2015
 │   │   ├── heart_data.csv
 │   │   ├── 📂 lung cancer dataset/  # X-ray image dataset
 │   │   ├── conditions.json          # Disease conditions database
@@ -431,7 +433,7 @@ Download your results as a formatted **PDF medical report** for your doctor.
 
 | Challenge | Solution |
 |:---|:---|
-| **Imbalanced medical datasets** (healthy patients >> sick patients) | Applied undersampling techniques via `imbalanced-learn` to balance training classes |
+| **Imbalanced medical datasets** (healthy patients >> sick patients) | Applied undersampling techniques via `imbalanced-learn` to balance training classes (BRFSS 2015: 253K+ records) |
 | **Streamlit UI limitations** (default design is plain) | Injected complex custom CSS: glassmorphism, dark mode, floating elements, pulse animations |
 | **Chatbot hallucination risk** (LLMs can give dangerous medical advice) | Built a 7-stage constrained pipeline with safety guardrails, RAG grounding, and triage logic |
 | **Grad-CAM gradient bugs** (tensor indexing issues in TensorFlow) | Used `tf.gather()` for safe class selection + vectorized matrix operations |
@@ -507,6 +509,7 @@ copies of the Software...
 - **[XGBoost](https://xgboost.readthedocs.io/)** — Gradient boosting for diabetes prediction
 - **[FAISS](https://github.com/facebookresearch/faiss)** — Facebook's vector similarity search for RAG
 - **[Sentence-Transformers](https://www.sbert.net/)** — Text embeddings for chatbot knowledge retrieval
+- **CDC BRFSS 2015** — Diabetes dataset source (Behavioral Risk Factor Surveillance System)
 - **CDC BRFSS 2020** — Heart disease dataset source
 - **Selvaraju et al. (2017)** — *"Grad-CAM: Visual Explanations from Deep Neural Networks"* — ICCV 2017
 - **Tan & Le (2019)** — *"EfficientNet: Rethinking Model Scaling for CNNs"* — ICML 2019
