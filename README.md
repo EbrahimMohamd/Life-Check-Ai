@@ -426,31 +426,12 @@ Click the floating chatbot button → describe your symptoms → receive a safe,
 ### 6️⃣ Export Reports
 Download your results as a formatted **PDF medical report** for your doctor.
 
----
-
-## 📸 Screenshots
-
-<p align="center">
-  <em>Screenshots will be added here</em>
-</p>
-
-| Screen | Preview |
-|:---|:---|
-| **Login Page** | *📸 Screenshot Placeholder* |
-| **Dashboard** | *📸 Screenshot Placeholder* |
-| **Diabetes Prediction Form** | *📸 Screenshot Placeholder* |
-| **Heart Disease Results** | *📸 Screenshot Placeholder* |
-| **Lung X-Ray + Grad-CAM Heatmap** | *📸 Screenshot Placeholder* |
-| **Medical Chatbot** | *📸 Screenshot Placeholder* |
-| **PDF Report** | *📸 Screenshot Placeholder* |
-
----
 
 ## ⚡ Challenges & Solutions
 
 | Challenge | Solution |
 |:---|:---|
-| **Imbalanced medical datasets** (healthy patients >> sick patients) | Applied SMOTE resampling via `imbalanced-learn` to balance training classes |
+| **Imbalanced medical datasets** (healthy patients >> sick patients) | Applied undersampling techniques via `imbalanced-learn` to balance training classes |
 | **Streamlit UI limitations** (default design is plain) | Injected complex custom CSS: glassmorphism, dark mode, floating elements, pulse animations |
 | **Chatbot hallucination risk** (LLMs can give dangerous medical advice) | Built a 7-stage constrained pipeline with safety guardrails, RAG grounding, and triage logic |
 | **Grad-CAM gradient bugs** (tensor indexing issues in TensorFlow) | Used `tf.gather()` for safe class selection + vectorized matrix operations |
@@ -469,7 +450,7 @@ Download your results as a formatted **PDF medical report** for your doctor.
 | 🧠 **More Disease Models** | Add brain tumor, skin cancer, and kidney disease prediction |
 | ⌚ **IoT Wearable Integration** | Real-time monitoring via smartwatch heart rate and glucose data |
 | 🗄️ **PostgreSQL Migration** | Replace SQLite with production-grade relational database |
-| 🔬 **SHAP Explainability** | Add SHAP values for tabular model interpretability alongside Grad-CAM |
+
 | 📊 **Analytics Dashboard** | Population-level health trend analytics for healthcare providers |
 | 🌐 **Expanded Language Support** | Add more languages beyond English and Arabic |
 
@@ -492,7 +473,7 @@ Download your results as a formatted **PDF medical report** for your doctor.
     <td align="center">
       <strong>Ebrahim Mohamed Abdeltwab</strong><br/>
       <sub>Lung Cancer & NLP Lead</sub><br/>
-      <sub>EfficientNetB0, Grad-CAM, chatbot engine (10 files), RAG, medical KBs</sub>
+      <sub>EfficientNetB0, Grad-CAM, chatbot engine ,  medical KBs</sub>
     </td>
   </tr>
 </table>
