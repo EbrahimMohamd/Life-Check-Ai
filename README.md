@@ -222,7 +222,7 @@ Patient Message
 | **Features** | BMI, Smoking, AlcoholDrinking, Stroke, PhysicalHealth, MentalHealth, DiffWalking, Sex, AgeCategory, Diabetic, PhysicalActivity, GenHealth, SleepTime, Asthma, KidneyDisease, SkinCancer |
 | **Output** | Risk probability, risk level, recommendation |
 | **Model File** | `heart_disease_rf_model.joblib` (~8.5 MB) |
-| **Key Technique** | SMOTE for class balancing |
+| **Key Technique** | Undersampling for class balancing |
 
 ### 🫁 Lung Cancer Detection — EfficientNetB0 (Deep Learning)
 
@@ -465,12 +465,12 @@ Download your results as a formatted **PDF medical report** for your doctor.
     <td align="center">
       <strong>Mahmoud Gomaaa Salah</strong><br/>
       <sub>Diabetes Model & Frontend Lead</sub><br/>
-      <sub>XGBoost model, Streamlit UI (600+ lines), CSS design, API client, PDF reports</sub>
+      <sub>XGBoost model, Streamlit UI (600+ lines), CSS design , PDF reports</sub>
     </td>
     <td align="center">
       <strong>Mohamed Saber Mohamed</strong><br/>
       <sub>Heart Disease & Backend Lead</sub><br/>
-      <sub>Random Forest model, SQLite DB, JWT auth, patient management, FastAPI setup</sub>
+      <sub>Random Forest model, API client, SQLite DB, JWT auth, patient management, FastAPI setup</sub>
     </td>
     <td align="center">
       <strong>Ebrahim Mohamed Abdeltwab</strong><br/>
