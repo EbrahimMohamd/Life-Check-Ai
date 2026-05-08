@@ -469,25 +469,25 @@ def render_header():
         st.markdown(f"<p class='header-tag'>Verified Patient</p><p class='header-title'>{st.session_state.get('full_name', 'Patient')}</p>", unsafe_allow_html=True)
         
     with col_btn_home:
-        if st.button("🏠", use_container_width=True, help="Dashboard", type="tertiary"):
+        if st.button(" ", icon=":material/home:", key="home_btn", use_container_width=True, help="Dashboard", type="tertiary"):
             set_page("Dashboard")
             
     with col_btn_export:
-        if st.button("📄 Export", use_container_width=True, type="tertiary"):
+        if st.button("Export", icon=":material/download:", key="export_btn", use_container_width=True, type="tertiary"):
             report_modal()
             
     with col_btn_settings:
-        if st.button("⚙️", use_container_width=True, help="Settings", type="tertiary"):
+        if st.button(" ", icon=":material/settings:", key="settings_btn", use_container_width=True, help="Settings", type="tertiary"):
             set_page("Settings")
             
     with col_btn_logout:
-        if st.button("🚪", use_container_width=True, help="Logout", type="tertiary"):
+        if st.button(" ", icon=":material/logout:", key="logout_btn", use_container_width=True, help="Logout", type="tertiary"):
             st.session_state.clear()
             st.rerun()
             
     with col_btn_theme:
-        theme_icon = "🌙" if is_light else "☀️"
-        if st.button(theme_icon, help="Toggle Theme", use_container_width=True, type="tertiary"):
+        theme_icon = ":material/dark_mode:" if is_light else ":material/light_mode:"
+        if st.button(" ", icon=theme_icon, key="theme_btn", help="Toggle Theme", use_container_width=True, type="tertiary"):
             st.session_state.theme = "dark" if is_light else "light"
             st.rerun()
             
