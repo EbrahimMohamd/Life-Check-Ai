@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="frontend/static/logo.png" alt="LifeCheck AI Logo" width="120"/>
+  <img src="frontend/static/logo.jpg" alt="LifeCheck AI Logo" width="120"/>
 </p>
 
 <h1 align="center">🏥 LifeCheck AI</h1>
