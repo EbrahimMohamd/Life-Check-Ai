@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 import json
 
-BASE_URL = "http://localhost:8000"
+BASE_URL = "https://mohamadsaber123-life-check-ai.hf.space"
 
 def get_headers():
     token = st.session_state.get("auth_token")
