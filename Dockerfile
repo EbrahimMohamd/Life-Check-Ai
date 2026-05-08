@@ -1,5 +1,5 @@
 # هنستخدم بايثون 3.9 (تقدر تغيرها لنسختك)
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # بنحدد مسار الشغل
 WORKDIR /code
