@@ -104,7 +104,7 @@ st.markdown(f"""
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background-image: url("{logo_bg}");
-    background-size: 50vw;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
     opacity: {v_watermark_opacity};
@@ -451,10 +451,18 @@ def render_header():
         letter-spacing: 1.2px;
         font-family: 'Inter', sans-serif;
     }
+    /* Enlarge top right header icons */
+    .stButton > button[kind="tertiary"] p {
+        font-size: 1.15rem !important;
+    }
+    .stButton > button[kind="tertiary"] p * {
+        font-size: 1.8rem !important;
+        vertical-align: middle !important;
+    }
     </style>
     """, unsafe_allow_html=True)
     
-    col_logo, col_info, col_spacer, col_btn_home, col_btn_export, col_btn_settings, col_btn_logout, col_btn_theme = st.columns([0.05, 0.25, 0.38, 0.05, 0.12, 0.05, 0.05, 0.05], vertical_alignment="center")
+    col_logo, col_info, col_spacer, col_btn_home, col_btn_export, col_btn_settings, col_btn_logout, col_btn_theme = st.columns([0.05, 0.25, 0.30, 0.07, 0.12, 0.07, 0.07, 0.07], vertical_alignment="center")
     
     with col_logo:
         import os
