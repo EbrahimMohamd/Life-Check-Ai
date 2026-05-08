@@ -480,17 +480,17 @@ Download your results as a formatted **PDF medical report** for your doctor.
 <table>
   <tr>
     <td align="center">
-      <strong>Member 1</strong><br/>
+      <strong>Mahmoud Gomaaa Salah</strong><br/>
       <sub>Diabetes Model & Frontend Lead</sub><br/>
       <sub>XGBoost model, Streamlit UI (600+ lines), CSS design, API client, PDF reports</sub>
     </td>
     <td align="center">
-      <strong>Member 2</strong><br/>
+      <strong>Mohamed Saber Mohamed</strong><br/>
       <sub>Heart Disease & Backend Lead</sub><br/>
       <sub>Random Forest model, SQLite DB, JWT auth, patient management, FastAPI setup</sub>
     </td>
     <td align="center">
-      <strong>Member 3</strong><br/>
+      <strong>Ebrahim Mohamed Abdeltwab</strong><br/>
       <sub>Lung Cancer & NLP Lead</sub><br/>
       <sub>EfficientNetB0, Grad-CAM, chatbot engine (10 files), RAG, medical KBs</sub>
     </td>
