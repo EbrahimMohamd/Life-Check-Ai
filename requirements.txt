@@ -5,11 +5,11 @@ faiss-cpu
 transformers
 accelerate
 rapidfuzz
-numpy>=2.4
-pandas>=3.0
-scikit-learn>=1.8
-pyarrow>=24.0
-tensorflow-cpu==2.15.0
+numpy
+pandas
+scikit-learn
+pyarrow
+tensorflow-cpu
 joblib
 streamlit
 fpdf2
