@@ -10,7 +10,7 @@ from services.pdf_generator import generate_patient_pdf
 
 
 import os
-logo_path_icon = os.path.join(os.path.dirname(__file__), "static", "logo.png")
+logo_path_icon = os.path.join(os.path.dirname(__file__), "static", "logo.jpg")
 st.set_page_config(page_title="LifeCheck AI", page_icon=logo_path_icon if os.path.exists(logo_path_icon) else "🧬", layout="wide", initial_sidebar_state="collapsed")
 
 def get_base64_of_bin_file(bin_file):
@@ -23,7 +23,7 @@ def get_base64_of_bin_file(bin_file):
 bot_icon_path = os.path.join(os.path.dirname(__file__), "assets", "bot_icon.png")
 bot_bg = f"data:image/png;base64,{get_base64_of_bin_file(bot_icon_path)}"
 
-logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
+logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.jpg")
 logo_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
 
 
