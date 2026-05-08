@@ -104,7 +104,7 @@ st.markdown(f"""
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background-image: url("{logo_bg}");
-    background-size: cover;
+    background-size: 80% 80%;
     background-position: center;
     background-repeat: no-repeat;
     opacity: {v_watermark_opacity};
