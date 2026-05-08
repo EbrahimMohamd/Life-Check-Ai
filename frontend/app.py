@@ -452,11 +452,12 @@ def render_header():
         font-family: 'Inter', sans-serif;
     }
     /* Enlarge top right header icons */
-    button[kind="tertiary"] {
-        font-size: 1.1rem !important;
-        padding: 0.5rem !important;
+    .stButton > button[kind="tertiary"] p {
+        font-size: 1.15rem !important;
     }
-    button[kind="tertiary"] span.material-symbols-rounded {
+    .stButton > button[kind="tertiary"] span[data-testid="stIconMaterial"],
+    .stButton > button[kind="tertiary"] span.material-symbols-rounded,
+    .stButton > button[kind="tertiary"] i {
         font-size: 1.8rem !important;
     }
     </style>
