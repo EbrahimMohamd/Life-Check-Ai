@@ -462,7 +462,7 @@ def render_header():
     </style>
     """, unsafe_allow_html=True)
     
-    col_logo, col_info, col_spacer, col_btn_home, col_btn_export, col_btn_settings, col_btn_logout, col_btn_theme = st.columns([0.05, 0.25, 0.30, 0.07, 0.12, 0.07, 0.07, 0.07], vertical_alignment="center")
+    col_logo, col_info, col_spacer, col_btn_home, col_btn_export, col_btn_settings, col_btn_logout, col_btn_theme = st.columns([0.05, 0.25, 0.38, 0.05, 0.12, 0.05, 0.05, 0.05], vertical_alignment="center")
     
     with col_logo:
         import os
