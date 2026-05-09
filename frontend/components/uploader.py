@@ -45,12 +45,7 @@ def render_lung_uploader():
                     # GRAD-CAM: EXPLAINABLE AI
                     # ============================
                     st.markdown("---")
-                    st.markdown("### 🧠 Explainable AI — Grad-CAM Visual Analysis")
-                    st.markdown("""
-                    > **What is Grad-CAM?** Gradient-weighted Class Activation Mapping (Grad-CAM) is a scientific technique
-                    > that reveals **which regions of the X-ray the AI model focused on** when making its decision.
-                    > This transforms the AI from a "black box" into a transparent, interpretable diagnostic tool.
-                    """)
+
                     
                     col1, col2 = st.columns(2)
                     
