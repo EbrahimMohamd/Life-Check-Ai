@@ -24,7 +24,7 @@ bot_icon_path = os.path.join(os.path.dirname(__file__), "assets", "bot_icon.png"
 bot_bg = f"data:image/png;base64,{get_base64_of_bin_file(bot_icon_path)}"
 
 logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.jpg")
-logo_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
+logo_bg = f"data:image/jpg;base64,{get_base64_of_bin_file(logo_path)}"
 
 
 
