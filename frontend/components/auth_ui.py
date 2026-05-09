@@ -13,7 +13,7 @@ def render_auth_ui():
     l_bg = _get_b64(logo_path)
     
     if l_bg:
-        st.markdown(f"<h1 style='text-align: center; color: #1e40af; margin-top: 50px;'><img src='data:image/png;base64,{l_bg}' width='50' style='vertical-align: middle; margin-right: 15px;'>LifeCheck AI</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center; color: #1e40af; margin-top: 50px;'><img src='data:image/jpg;base64,{l_bg}' width='50' style='vertical-align: middle; margin-right: 15px;'>LifeCheck AI</h1>", unsafe_allow_html=True)
     else:
         st.markdown("<h1 style='text-align: center; color: #1e40af; margin-top: 50px;'>🧬 LifeCheck AI</h1>", unsafe_allow_html=True)
     st.markdown("<h4 style='text-align: center; color: #64748b; margin-bottom: 2rem;'>Secure Patient Portal</h4>", unsafe_allow_html=True)
