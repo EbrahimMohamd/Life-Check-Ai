@@ -466,9 +466,9 @@ def render_header():
     
     with col_logo:
         import os
-        logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
+        logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.jpg")
         if os.path.exists(logo_path):
-            l_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
+            l_bg = f"data:image/jpg;base64,{get_base64_of_bin_file(logo_path)}"
             st.markdown(f"<img src='{l_bg}' width='42' style='display: block; margin: 0 auto;'>", unsafe_allow_html=True)
         else:
             st.markdown("<h1 style='margin:0; font-size:2rem;'>🧬</h1>", unsafe_allow_html=True)
@@ -503,10 +503,10 @@ def render_header():
 
 def render_dashboard():
     import os
-    logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.png")
+    logo_path = os.path.join(os.path.dirname(__file__), "static", "logo.jpg")
     
     if os.path.exists(logo_path):
-        l_bg = f"data:image/png;base64,{get_base64_of_bin_file(logo_path)}"
+        l_bg = f"data:image/jpg;base64,{get_base64_of_bin_file(logo_path)}"
         st.markdown(f"<h1 style='text-align:center;'><img src='{l_bg}' width='50' style='vertical-align: middle; margin-right: 15px;'>Welcome to LifeCheck AI</h1>", unsafe_allow_html=True)
     else:
         st.markdown("<h1 style='text-align:center;'>Welcome to LifeCheck AI</h1>", unsafe_allow_html=True)
