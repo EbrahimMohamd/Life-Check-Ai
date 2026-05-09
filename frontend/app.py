@@ -499,7 +499,7 @@ def render_header():
             st.session_state.theme = "dark" if is_light else "light"
             st.rerun()
             
-    st.markdown("<hr style='margin-top: -20px; margin-bottom: 15px; border-color: var(--border);'>", unsafe_allow_html=True)
+    st.markdown("<hr style='margin-top: -30px; margin-bottom: 15px; border-color: var(--border);'>", unsafe_allow_html=True)
 
 def render_dashboard():
     import os
