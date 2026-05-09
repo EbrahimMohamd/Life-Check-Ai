@@ -9,7 +9,7 @@ def render_auth_ui():
             with open(path, 'rb') as f: return base64.b64encode(f.read()).decode()
         return ""
     
-    logo_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "logo.png")
+    logo_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "logo.jpg")
     l_bg = _get_b64(logo_path)
     
     if l_bg:
