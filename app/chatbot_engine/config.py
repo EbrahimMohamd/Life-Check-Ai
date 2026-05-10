@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-# LLM (اختياري)
+# LLM (اoptional, for future use)
 USE_LLM = False
 LLM_MODEL = "microsoft/Phi-3-mini-4k-instruct"
 
@@ -16,7 +16,6 @@ CONF_MIN_FOR_MATCH = 0.2
 HIGH_RISK_THRESHOLD = 0.6
 MED_RISK_THRESHOLD = 0.3
 
-# follow-up questions (عند نقص الأعراض)
 FOLLOWUP_QUESTIONS = [
     "هل في حمى أو سخونية؟",
     "هل في ألم في الصدر أو ضيق تنفس؟",

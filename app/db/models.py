@@ -22,8 +22,8 @@ class MedicalRecord(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     patient_id = Column(Integer, ForeignKey("users.id"))
-    record_type = Column(String, index=True) # "Diabetes", "Heart", "Lung", "Chat"
-    data_json = Column(Text) # storing results payload
+    record_type = Column(String, index=True)
+    data_json = Column(Text)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     patient = relationship("User", back_populates="records")

@@ -22,7 +22,6 @@ def load_objects():
             print("Failed to load heart model:", e)
     return model_cache, features_cache
 
-# ── AgeCategory mapping (matches training) ──
 AGE_MAP = {
     '18-24': 0, '25-29': 1, '30-34': 2, '35-39': 3,
     '40-44': 4, '45-49': 5, '50-54': 6, '55-59': 7,
@@ -30,7 +29,6 @@ AGE_MAP = {
     '80 or older': 12
 }
 
-# ── GenHealth mapping (matches training) ──
 GENHEALTH_MAP = {
     'Poor': 0, 'Fair': 1, 'Good': 2, 'Very good': 3, 'Excellent': 4
 }

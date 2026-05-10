@@ -2,7 +2,6 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# The database file will be saved in the app/data directory alongside the jsons
 DB_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "lifecheck.db")
 SQLALCHEMY_DATABASE_URL = f"sqlite:///{DB_PATH}"
 

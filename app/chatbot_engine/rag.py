@@ -3,28 +3,20 @@ import os
 from app.chatbot_engine.embeddings import embed
 from app.chatbot_engine.config import TOP_K, BASE_DIR
 
-# =========================
 # Load Knowledge Base
-# =========================
 KB_PATH = os.path.join(BASE_DIR, "data", "medical_kb.json")
 
 with open(KB_PATH, encoding="utf-8") as f:
     KB = json.load(f)
 
-# =========================
 # Prepare Documents (English for embedding)
-# =========================
 DOCS = [doc["text_en"] for doc in KB]
 
-# =========================
 # Precompute embeddings once
-# =========================
 VECTORS = embed(DOCS)
 
 
-# =========================
 # Similarity Function
-# =========================
 def cosine_similarity(vec1, vec2):
     dot = sum(a * b for a, b in zip(vec1, vec2))
     norm1 = sum(a * a for a in vec1) ** 0.5
@@ -32,9 +24,7 @@ def cosine_similarity(vec1, vec2):
     return dot / (norm1 * norm2 + 1e-8)
 
 
-# =========================
 # Search Function
-# =========================
 def search(query: str, lang: str = "ar"):
     """
     Retrieve top relevant medical knowledge
