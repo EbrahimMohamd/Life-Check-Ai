@@ -2,7 +2,7 @@ import requests
 import streamlit as st
 import json
 
-BASE_URL = "http://localhost:8000"  # Update with your actual backend URL
+BASE_URL = "http://localhost:8000" 
 
 def get_headers():
     token = st.session_state.get("auth_token")
