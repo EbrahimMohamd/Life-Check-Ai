@@ -95,8 +95,7 @@ def send_chat_message(user_id: int, message: str) -> str:
         response = requests.post(f"{BASE_URL}/chat", json={"user_id": user_id, "message": message}, headers=get_headers())
         response.raise_for_status()
         res = response.json()
-        # Optionally we can save the chat, but user mostly asked for health predictions.
-        # save_record("Chat Interaction", {"user": message, "bot": res.get("reply", "")})
+
         return res.get("reply", "")
     except Exception as e:
         return f"Error communicating with chatbot: {str(e)}"
@@ -128,7 +127,6 @@ def predict_lung(image_bytes: bytes, filename: str, content_type: str):
         response.raise_for_status()
         res = response.json()
         
-        # Expert Safeguard: Filter out massive base64 Heatmap strings before injecting into SQLite DB!
         save_payload = {
             "prediction": res.get("prediction", "Error"),
             "confidence": res.get("confidence", 0.0)

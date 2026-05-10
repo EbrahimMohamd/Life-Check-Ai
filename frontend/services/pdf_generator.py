@@ -7,12 +7,12 @@ class PDFReport(FPDF):
         import os
         logo_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'static', 'logo.jpg')
         if os.path.exists(logo_path):
-            self.image(logo_path, 10, 8, 12)  # x, y, width
+            self.image(logo_path, 10, 8, 12) 
         
-        # Shift text to the right to avoid overlapping the logo
+
         self.set_font('helvetica', 'B', 15)
-        self.set_text_color(37, 99, 235) # blue
-        self.cell(15) # Spacing for logo
+        self.set_text_color(37, 99, 235)
+        self.cell(15)
         self.cell(0, 10, 'LifeCheck AI - Confidential Medical Report', border=False, ln=1, align='C')
         self.set_draw_color(37, 99, 235)
         self.line(10, 22, 200, 22)
@@ -28,9 +28,7 @@ def get_clinical_suggestion(record_type, data_dict):
     """Generate dynamic clinical advice based on AI findings."""
     rt = str(record_type).lower()
 
-    # ── Extract the result dict (handles nested or flat structures) ──
-    # Stored as: {"payload": {...}, "result": {"risk_level": "High", ...}}
-    # OR lung:   {"filename": "...", "AI_Diagnostics": {"prediction": "Malignant", ...}}
+
     result = data_dict.get("result", {})
     ai_diag = data_dict.get("AI_Diagnostics", {})
 
@@ -41,10 +39,10 @@ def get_clinical_suggestion(record_type, data_dict):
         data_dict.get("prediction", "")))
     ).lower()
 
-    # ── Combine signals ──
+
     signal = risk_level + " " + prediction
 
-    # ── LUNG CANCER — 3 classes ──
+
     if "lung" in rt:
         if "malignant" in signal:
             return (
@@ -65,7 +63,7 @@ def get_clinical_suggestion(record_type, data_dict):
                 "have occupational exposure to carcinogens."
             )
 
-    # ── DIABETES — High / Low ──
+
     elif "diabetes" in rt:
         if "high" in signal:
             return (
@@ -75,7 +73,7 @@ def get_clinical_suggestion(record_type, data_dict):
                 "Evaluate pharmacological intervention (e.g., Metformin) with your doctor. "
                 "Target 150+ minutes of aerobic exercise per week."
             )
-        else:  # Low
+        else:  
             return (
                 "[LOW RISK] Low diabetes risk based on your current lifestyle profile. "
                 "Maintain a balanced diet rich in whole grains, vegetables, and lean protein. "
@@ -83,7 +81,7 @@ def get_clinical_suggestion(record_type, data_dict):
                 "Annual blood glucose check is still recommended as a preventive measure."
             )
 
-    # ── HEART DISEASE — High / Low ──
+
     elif "heart" in rt:
         if "high" in signal:
             return (
@@ -111,14 +109,14 @@ def generate_patient_pdf():
     pdf = PDFReport()
     pdf.add_page()
     
-    # --- HEADER / PROFILE SECTION ---
+
     pdf.set_font("helvetica", 'B', 14)
     pdf.set_text_color(15, 23, 42) # Slate 900
     pdf.cell(0, 10, "Patient Demographics & Profile", ln=1)
     
     pdf.set_font("helvetica", '', 11)
-    pdf.set_fill_color(248, 250, 252) # Soft Slate 50
-    pdf.set_draw_color(203, 213, 225) # Border Slate 300
+    pdf.set_fill_color(248, 250, 252) 
+    pdf.set_draw_color(203, 213, 225) 
     
     profile_text = (
         f"  Full Name:   {profile.get('full_name', 'N/A')}\n"
@@ -129,7 +127,6 @@ def generate_patient_pdf():
     pdf.multi_cell(0, 8, profile_text, fill=True, border=1)
     pdf.ln(10)
     
-    # --- DIAGNOSTIC HISTORY ---
     pdf.set_font("helvetica", 'B', 14)
     pdf.set_text_color(15, 23, 42)
     pdf.cell(0, 10, "AI Diagnostic History & Clinical Advisory", ln=1)
@@ -140,22 +137,21 @@ def generate_patient_pdf():
         pdf.cell(0, 10, "No medical records found on your profile.", ln=1)
     else:
         for rec in records:
-            # Title for each record
+
             pdf.set_font("helvetica", 'B', 12)
-            pdf.set_text_color(37, 99, 235) # Blue Primary
+            pdf.set_text_color(37, 99, 235)
             
             rt = str(rec.get('record_type', 'Unknown')).upper()
             date_str = str(rec.get('created_at', ''))[:10]
             pdf.cell(0, 8, f"-> {rt} ASSESSMENT (Date: {date_str})", ln=1)
             
-            # Parse JSON data
+
             data_dict = {}
             try:
                 data_dict = json.loads(rec.get('data_json', '{}'))
             except:
                 pass
             
-            # Print core metrics
             pdf.set_font("helvetica", '', 10)
             pdf.set_text_color(51, 65, 85) # Slate 700
             
@@ -171,7 +167,6 @@ def generate_patient_pdf():
                 else:
                     safe_val = str(v).encode('ascii', 'ignore').decode()
                     if k.lower() in ['prediction', 'risk_level']:
-                         # highlight primary finding
                          pdf.set_font("helvetica", 'B', 10)
                          pdf.set_text_color(220, 38, 38) if 'high' in safe_val.lower() or 'malignant' in safe_val.lower() else pdf.set_text_color(15, 23, 42)
                          pdf.cell(0, 6, f"  > Diagnostic Result: {safe_val}", ln=1)
@@ -180,7 +175,7 @@ def generate_patient_pdf():
                     else:
                          pdf.cell(0, 6, f"  {str(k).replace('_', ' ').title()}: {safe_val}", ln=1)
             
-            # --- AI SUGGESTION BLOCK ---
+
             pdf.ln(2)
             pdf.set_font("helvetica", 'B', 10)
             pdf.set_text_color(15, 118, 110) # Teal 700 for medical advice

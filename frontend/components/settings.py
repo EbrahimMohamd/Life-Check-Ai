@@ -7,7 +7,6 @@ def render_settings():
 
     col1, col2, col3 = st.columns([1, 6, 1])
     with col2:
-        # --- Security Settings ---
         st.markdown("### 🔒 Security")
         with st.form("password_change_form"):
             old_pw = st.text_input("Current Password", type="password")
@@ -36,17 +35,17 @@ def render_settings():
 
         st.markdown("<hr style='border-color: var(--border); margin: 30px 0;'>", unsafe_allow_html=True)
 
-        # --- Danger Zone ---
+
         st.markdown("### ⚠️ Danger Zone")
         st.markdown("<p style='color: var(--danger); font-size: 0.9em; margin-bottom: 20px;'>These actions are destructive and cannot be undone. Please proceed with caution.</p>", unsafe_allow_html=True)
 
-        # Clear History Button
+
         if st.button("🗑️ Clear Medical History", use_container_width=True):
             confirm_clear_history()
 
         st.markdown("<div style='margin-bottom: 10px;'></div>", unsafe_allow_html=True)
 
-        # Delete Account Button
+
         if st.button("🚨 Delete My Account Permanently", use_container_width=True, type="secondary"):
             confirm_delete_account()
 

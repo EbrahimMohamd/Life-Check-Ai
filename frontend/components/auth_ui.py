@@ -75,8 +75,6 @@ def render_auth_ui():
                         }
                         res = register(data)
                         if "error" in res:
-                            # Render the exact error so the user isn't stuck guessing!
-                            # E.g. "value is not a valid email address" or "Username already registered"
                             st.error(f"Registration failed: {res['error']}")
                         else:
                             st.success("Account created successfully! Logging you in...")

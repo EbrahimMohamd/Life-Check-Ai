@@ -18,9 +18,6 @@ def render_lung_uploader():
                     st.error(res["error"])
                 else:
                     
-                    # ============================
-                    # DIAGNOSTIC REPORT CARD
-                    # ============================
                     st.markdown("<hr>", unsafe_allow_html=True)
                     st.markdown("### 🔬 Automated Diagnostic Report", unsafe_allow_html=True)
                     
@@ -41,9 +38,6 @@ def render_lung_uploader():
                     </div>
                     """, unsafe_allow_html=True)
                     
-                    # ============================
-                    # GRAD-CAM: EXPLAINABLE AI
-                    # ============================
                     st.markdown("---")
 
                     
@@ -57,7 +51,6 @@ def render_lung_uploader():
                         st.markdown("**🌡️ Grad-CAM Overlay**")
                         st.image(f"data:image/jpeg;base64,{res['heatmap']}", use_container_width=True, caption="Heatmap superimposed on scan")
                     
-                    # Color legend
                     st.markdown("""
                     <div style="background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 15px; margin-top: 10px;">
                         <p style="color: var(--text-body); margin: 0; font-size: 0.9em;">
