@@ -304,12 +304,6 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 streamlit run frontend/app.py
 ```
 
-**Option C — Docker:**
-```bash
-docker build -t lifecheck-ai .
-docker run -p 8000:8000 -p 8501:8501 lifecheck-ai
-```
-
 <details>
 <summary><strong>⚡ GPU Setup (Optional — for faster lung model inference)</strong></summary>
 
